@@ -1,0 +1,29 @@
+.social,
+.social * {
+  box-sizing: border-box;
+}
+.social {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: var(--gray-blue-grey-blue-95, #edeff2);
+  border-width: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 60px;
+  position: relative;
+  max-width: 240px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
