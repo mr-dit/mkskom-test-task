@@ -16,8 +16,8 @@ const Input = ({ leftIcon, rightIcon, placeholder, validateNumbers }) => {
     };
 
     return (
-        <form className={styles['input-form']} onSubmit={handleSubmit}>
-            <div className={styles.input}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.formInput}>
                 {leftIcon && (
                     <img src={leftIcon} alt="Left Icon" className={styles['left-icon']} />
                 )}

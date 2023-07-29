@@ -29,8 +29,11 @@ const Header = () => {
                     </svg>
                 </div>
 
-                <Input leftIcon={search} rightIcon={navigation}
-                       placeholder={'Search Transactions and Documents'}></Input>
+                <Input leftIcon={search}
+                       rightIcon={navigation}
+                       placeholder={'Search Transactions and Documents'}
+                       validateNumbers={true}
+                />
 
                 <div className={style.right}>
                     <div className={style.user}>

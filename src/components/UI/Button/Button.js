@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import style from "./Button.module.scss"
 
-const SVGButton = ({ svgPath }) => {
+const SVGButton = ({ svgPath, size="large" }) => {
     const [svgContent, setSVGContent] = useState(null);
     const [svgColor, setSVGColor] = useState('#C3CAD9');
 
@@ -23,7 +23,7 @@ const SVGButton = ({ svgPath }) => {
     };
 
     return (
-        <button onClick={handleButtonClick} className={style.button}>
+        <button onClick={handleButtonClick} className={`${style.button} ${style[size]}`}>
             {svgContent && (
                 <div dangerouslySetInnerHTML={{ __html: svgContent.replace('fill="#C3CAD9"', `fill="${svgColor}"`) }} />
             )}
