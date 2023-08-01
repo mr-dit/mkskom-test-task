@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Input.module.scss';
+import style from './Input.module.scss';
 
 const Input = ({ leftIcon, rightIcon, placeholder, validateNumbers, onSubmit }) => {
     const [text, setText] = useState('');
@@ -15,19 +15,19 @@ const Input = ({ leftIcon, rightIcon, placeholder, validateNumbers, onSubmit }) 
     };
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.formInput}>
+        <form className={style.form} onSubmit={handleSubmit}>
+            <div className={style.formInput}>
                 {leftIcon && (
-                    <img src={leftIcon} alt="Left Icon" className={styles.leftIcon} />
+                    <img src={leftIcon} alt="Left Icon" className={style.leftIcon} />
                 )}
                 <input
                     type="text"
-                    className={styles.textInput}
+                    className={style.textInput}
                     value={text}
                     onChange={handleInputChange}
                     placeholder={placeholder}
                 />
-                <button type="submit" className={styles.submitButton}>
+                <button type="submit" className={style.submitButton}>
                     {rightIcon && (
                         <img src={rightIcon} alt="Right Icon" />
                     )}

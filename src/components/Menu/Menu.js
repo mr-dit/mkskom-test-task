@@ -1,17 +1,17 @@
 import Button from "../UI/Button/Button";
-import explore from "../../icons/explore.svg"
-import star from "../../icons/star.svg"
-import messenger from "../../icons/messenger.svg"
-import trending from "../../icons/trending.svg"
-import publicon from "../../icons/publicon.svg"
-import city from "../../icons/city.svg"
-import addCircle from "../../icons/addCircle.svg"
-import man from "../../icons/man.jpeg"
-import lady1 from "../../icons/lady1.png"
-import lady2 from "../../icons/lady2.png"
-import man2 from "../../icons/man2.png"
+import explore from "../../icons/explore.svg";
+import star from "../../icons/star.svg";
+import messenger from "../../icons/messenger.svg";
+import trending from "../../icons/trending.svg";
+import publicon from "../../icons/publicon.svg";
+import city from "../../icons/city.svg";
+import addCircle from "../../icons/addCircle.svg";
+import man from "../../icons/man.jpeg";
+import lady1 from "../../icons/lady1.png";
+import lady2 from "../../icons/lady2.png";
+import man2 from "../../icons/man2.png";
 
-import style from "./Menu.module.scss"
+import style from "./Menu.module.scss";
 
 
 const Menu = () => {

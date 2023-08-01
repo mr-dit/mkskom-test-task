@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import style from "./Button.module.scss"
+import style from "./Button.module.scss";
 
 const SVGButton = ({ svgPath, size="large" }) => {
     const [svgContent, setSVGContent] = useState(null);
