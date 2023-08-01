@@ -16,7 +16,7 @@
 }
 
 .wrapper{
-	padding: 25px 25px;
+	padding: 24px 25px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -45,7 +45,11 @@
 	align-items: center;
 	justify-content: flex-start;
 }
-
+.input{
+	height: 50px;
+	max-width: 430px;
+	width: 100%;
+}
 .user {
 	color: var(--gray-blue-grey-blue-60, #6b7a99);
 	text-align: left;

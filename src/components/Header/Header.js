@@ -1,13 +1,16 @@
-import style from "./Header.module.scss"
+import style from "./Header.module.scss";
 import SVGButton from "../UI/Button/Button";
-import burger from "../../icons/burger.svg"
-import search from "../../icons/search.svg"
-import navigation from "../../icons/navigation.svg"
-import notification from "../../icons/notification.svg"
-import cancel from "../../icons/cancel.svg"
+import burger from "../../icons/burger.svg";
+import search from "../../icons/search.svg";
+import navigation from "../../icons/navigation.svg";
+import notification from "../../icons/notification.svg";
+import cancel from "../../icons/cancel.svg";
 import Input from "../UI/Input/Input";
 
-const Header = () => {
+const Header = ({onAlbumIdSubmit}) => {
+    const handleInputSubmit = (value) => {
+        onAlbumIdSubmit(value);
+    };
 
     return (
         <header className={style.header}>
@@ -28,12 +31,14 @@ const Header = () => {
                         <path fillRule="evenodd" clipRule="evenodd" d="M9.33337 13C8.23337 13 7.33337 13.9 7.33337 15C7.33337 16.1 8.23337 17 9.33337 17C10.4334 17 11.3334 16.1 11.3334 15C11.3334 13.9 10.4334 13 9.33337 13ZM21.3334 13C20.2334 13 19.3334 13.9 19.3334 15C19.3334 16.1 20.2334 17 21.3334 17C22.4334 17 23.3334 16.1 23.3334 15C23.3334 13.9 22.4334 13 21.3334 13ZM15.3334 13C14.2334 13 13.3334 13.9 13.3334 15C13.3334 16.1 14.2334 17 15.3334 17C16.4334 17 17.3334 16.1 17.3334 15C17.3334 13.9 16.4334 13 15.3334 13Z" fill="#C3CAD9"/>
                     </svg>
                 </div>
-
-                <Input leftIcon={search}
-                       rightIcon={navigation}
-                       placeholder={'Search Transactions and Documents'}
-                       validateNumbers={true}
-                />
+                <div className={style.input}>
+                    <Input leftIcon={search}
+                           rightIcon={navigation}
+                           placeholder={'Search Transactions and Documents'}
+                           validateNumbers={true}
+                           onSubmit={handleInputSubmit}
+                    />
+                </div>
 
                 <div className={style.right}>
                     <div className={style.user}>
@@ -42,13 +47,10 @@ const Header = () => {
                         </svg>
                         Clayton Santos
                     </div>
-
                     <SVGButton svgPath={notification}/>
                     <SVGButton svgPath={cancel}/>
                 </div>
-
             </div>
-
         </header>
     );
 };

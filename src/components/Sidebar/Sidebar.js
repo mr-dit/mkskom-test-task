@@ -1,16 +1,9 @@
 import style from "./Sidebar.module.scss"
 import SidebarButton from "../UI/SidebarButton/SidebarButton";
+import React from "react";
 
-const folders = [{text: "Design", count: 23}, {text: "Code Blocks", count: 15}, {
-    text: "Drafts",
-    count: 18
-}, {text: "Peoples Review", count: 21}, {text: "Social", count: 43}, {text: "Labels", count: 36}, {
-    text: "My notes",
-    count: 29
-},]
-const labels = [{text: "Notes", color: "#33BFFF"}, {text: "Change Notes", color: "#FF6633"}, {
-    text: "From Family", color: "#29CC39"
-}, {text: "Imagium", color: "#8833FF"}, {text: "Work", color: "#C3CAD9"},]
+const folders = [{text: "Design", count: 23}, {text: "Code Blocks", count: 15}, {text: "Drafts", count: 18}, {text: "Peoples Review", count: 21}, {text: "Social", count: 43}, {text: "Labels", count: 36}, {text: "My notes", count: 29},]
+const labels = [{text: "Notes", color: "#33BFFF"}, {text: "Change Notes", color: "#FF6633"}, {text: "From Family", color: "#29CC39"}, {text: "Imagium", color: "#8833FF"}, {text: "Work", color: "#33BFFF"},]
 
 const Sidebar = () => {
     return (<>
@@ -27,8 +20,12 @@ const Sidebar = () => {
             </div>
             <div className={style.contentMenu}>
                 <SidebarButton name={"All Notes"} count={43} isActive={true}/>
-                {folders.map((folder) => {
-                    return <SidebarButton name={folder.text} count={folder.count}/>
+                {folders.map((folder, i) => {
+                    return (
+                        <React.Fragment key={i}>
+                            <SidebarButton name={folder.text} count={folder.count}/>
+                        </React.Fragment>
+                    )
                 })}
                 <div className={style.btn}>
                     <AddButton text={"Add Folder"}/>
@@ -37,8 +34,8 @@ const Sidebar = () => {
             <div className={style.labels}>
                 Labels
                 <div className={style.labelsList}>
-                    {labels.map((label) => {
-                        return <Label text={label.text} color={label.color}/>
+                    {labels.map((label, i) => {
+                        return <React.Fragment key={i}> <Label text={label.text} color={label.color}/></React.Fragment>
                     })}
                     <AddButton text={"New Label"}/>
                 </div>
@@ -50,9 +47,10 @@ const Sidebar = () => {
 
 export default Sidebar
 
+
 export const AddButton = ({text}) => {
     return (<button className={style.addFolder}>
-        <div className={style.content}>
+        <div>
             <svg
                 width="30"
                 height="30"
